@@ -7,3 +7,7 @@
 .flex-center {
   @apply flex items-center justify-center;
 }
+.dot-pattern {
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 0.3) 1px, black 1px), linear-gradient(rgba(0, 0, 0, 0.3) 1px, black 1px);
+  background-size: 9px 9px, 9px 9px;
+}

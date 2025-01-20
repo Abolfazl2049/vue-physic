@@ -4,9 +4,9 @@ class Entity {
   w: number;
   h: number;
   type: "environment" | "body" | "weapon";
-  constructor(type: typeof this.type) {
-    this.x = 250;
-    this.y = 250;
+  constructor(type: typeof this.type, x: number, y: number) {
+    this.x = x;
+    this.y = y;
     this.w = 100;
     this.h = 100;
     this.type = type;

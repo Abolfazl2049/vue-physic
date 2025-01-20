@@ -5,5 +5,6 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
   imports: {
     dirs: ["script/*/*"]
-  }
+  },
+  css : ['public/css/utils.css']
 });
