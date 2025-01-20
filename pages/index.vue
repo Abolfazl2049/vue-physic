@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const entity = entityStore();
-
+const screenInfo = screenInfoStore();
 onMounted(() => {
-  // for (let i of new Array(2)) entity.list.push(new Entity("weapon", Math.random() * 500, Math.random() * 500));
+  entity.list.push(new Entity("weapon", screenInfo.data.maxXBlocks - 20, screenInfo.data.maxYBlocks - 20, 2, 4));
 });
 </script>
 <template>

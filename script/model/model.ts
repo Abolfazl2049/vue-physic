@@ -4,12 +4,12 @@ class Entity {
   w: number;
   h: number;
   type: "environment" | "body" | "weapon";
-  constructor(type: typeof this.type, x: number, y: number) {
+  constructor(type: typeof this.type, x: number, y: number, w: number, h: number) {
+    this.type = type;
     this.x = x;
     this.y = y;
-    this.w = 100;
-    this.h = 100;
-    this.type = type;
+    this.w = w;
+    this.h = h;
   }
 }
 export {Entity};

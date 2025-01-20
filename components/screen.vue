@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const screenInfo = screenInfoStore();
 let getScreenSize = () => {
-  return {width: `${screenInfo.data.maxXBlocks}px`, height: `${screenInfo.data.maxYBlocks}px`};
+  return {width: `${screenInfo.data.maxXBlocks * 10}px`, height: `${screenInfo.data.maxYBlocks * 10}px`};
 };
 </script>
 <template>
