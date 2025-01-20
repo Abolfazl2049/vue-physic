@@ -1,0 +1,36 @@
+<script setup lang="ts">
+const ui = uiStore();
+const entity = entityStore();
+let x = ref();
+let y = ref();
+let w = ref();
+let h = ref();
+let addEntity = () => {
+  entity.list.push(new Entity("environment", x.value, y.value, w.value, h.value));
+  ui.showNewEntityPanel = false;
+};
+</script>
+<template>
+  <div v-if="ui.showNewEntityPanel" class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-2 bg-white z-30">
+    <div class="flex-col *:border gap-4 *:p-2">
+      <label for="x">
+        x :
+        <input v-model="x" name="x" />
+      </label>
+      <label for="y">
+        y :
+        <input v-model="y" name="y" />
+      </label>
+      <label for="w">
+        w :
+        <input v-model="w" name="w" />
+      </label>
+      <label for="h">
+        h :
+        <input v-model="h" name="h" />
+      </label>
+    </div>
+    <button class="bg-black text-white mt-5 w-full" @click="addEntity">Add</button>
+  </div>
+  <button class="bg-white fixed bottom-5 left-5 p-2 rounded-lg text-xl z-20" @click="ui.showNewEntityPanel = true">new entity</button>
+</template>
