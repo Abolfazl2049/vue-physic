@@ -11,6 +11,7 @@ onMounted(() => {
       <ScreenInfo />
       <Entity v-for="i in entity.list" :data="i" />
     </Screen>
-    <NewEntityPanel />
+    <PanelNewEntity />
+    <PanelMoveEntity />
   </div>
 </template>

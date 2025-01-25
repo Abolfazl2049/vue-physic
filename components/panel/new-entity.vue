@@ -7,11 +7,11 @@ let w = ref();
 let h = ref();
 let addEntity = () => {
   entity.list.push(new Entity("environment", x.value, y.value, w.value, h.value));
-  ui.showNewEntityPanel = false;
+  ui.panel.show.newEntity = false;
 };
 </script>
 <template>
-  <div v-if="ui.showNewEntityPanel" class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-2 bg-white z-30">
+  <div v-if="ui.panel.show.newEntity" class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-2 bg-white z-30">
     <div class="flex-col *:border gap-4 *:p-2">
       <label for="x">
         x :
@@ -32,5 +32,5 @@ let addEntity = () => {
     </div>
     <button class="bg-black text-white mt-5 w-full" @click="addEntity">Add</button>
   </div>
-  <button class="bg-white fixed bottom-5 left-5 p-2 rounded-lg text-xl z-20" @click="ui.showNewEntityPanel = true">new entity</button>
+  <button class="bg-white fixed bottom-5 left-5 p-2 rounded-lg text-xl z-20" @click="ui.panel.show.newEntity = !ui.panel.show.newEntity">new entity</button>
 </template>
