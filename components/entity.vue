@@ -9,5 +9,8 @@ let calculateEntityStyles = () => {
 };
 </script>
 <template>
-  <div @contextmenu.prevent="(ui.panel.data = data), (ui.panel.show.moveEntity = true)" class="bg-white absolute border border-black" :style="calculateEntityStyles()"></div>
+  <div
+    @contextmenu.prevent="(ui.panel.data = data), (ui.panel.show.moveEntity = true)"
+    class="bg-white absolute border border-black transition-all"
+    :style="calculateEntityStyles()"></div>
 </template>

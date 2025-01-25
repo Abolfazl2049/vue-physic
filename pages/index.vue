@@ -2,7 +2,7 @@
 const entity = entityStore();
 const screenInfo = screenInfoStore();
 onMounted(() => {
-  entity.list.push(new Entity("weapon", screenInfo.data.maxXBlocks - 20, screenInfo.data.maxYBlocks - 20, 2, 4));
+  entity.list.push(new Entity("body", 50, 50, 10, 10));
 });
 </script>
 <template>

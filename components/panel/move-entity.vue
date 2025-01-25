@@ -6,9 +6,14 @@ let x = ref();
 let y = ref();
 let moveEntity = () => {
   let entity = ui.panel.data as Entity;
-  entity.x = x.value;
-  entity.y = y.value;
-  ui.panel.show.moveEntity = false;
+  let filledBlocks = getFilledBlocks(entity.id);
+  for (let i = entity.x; i !== x.value; i++) {
+    console.log(i);
+    if (filledBlocks.x.includes(i)) throw "crash in" + i;
+    setTimeout(() => {
+      entity.x++;
+    }, 200);
+  }
 };
 </script>
 <template>
@@ -17,13 +22,16 @@ let moveEntity = () => {
     <div class="flex-col *:*:border space-y-4 mt-5">
       <label for="x">
         x :
-        <input name="x" v-model="x" />
+        <input name="x" v-model="x" type="number" />
       </label>
       <label for="y">
         y :
-        <input name="y" v-model="y" />
+        <input name="y" v-model="y" type="number" />
       </label>
     </div>
-    <button class="bg-black text-white p-2 mt-5" @click="moveEntity">Submit</button>
+    <div class="flex justify-between">
+      <button class="bg-black text-white p-2 mt-5" @click="moveEntity">Submit</button>
+      <button class="bg-black text-white p-2 mt-5" @click="ui.panel.show.moveEntity = false">close</button>
+    </div>
   </div>
 </template>

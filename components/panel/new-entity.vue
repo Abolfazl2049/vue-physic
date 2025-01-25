@@ -15,19 +15,19 @@ let addEntity = () => {
     <div class="flex-col *:border gap-4 *:p-2">
       <label for="x">
         x :
-        <input v-model="x" name="x" />
+        <input v-model="x" name="x" type="number" />
       </label>
       <label for="y">
         y :
-        <input v-model="y" name="y" />
+        <input v-model="y" name="y" type="number" />
       </label>
       <label for="w">
         w :
-        <input v-model="w" name="w" />
+        <input v-model="w" name="w" type="number" />
       </label>
       <label for="h">
         h :
-        <input v-model="h" name="h" />
+        <input v-model="h" name="h" type="number" />
       </label>
     </div>
     <button class="bg-black text-white mt-5 w-full" @click="addEntity">Add</button>
