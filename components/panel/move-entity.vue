@@ -10,9 +10,6 @@ let moveEntity = () => {
   for (let i = entity.x; i !== x.value; i++) {
     console.log(i);
     if (filledBlocks.x.includes(i)) throw "crash in" + i;
-    setTimeout(() => {
-      entity.x++;
-    }, 200);
   }
 };
 </script>
